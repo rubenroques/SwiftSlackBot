@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		45E5A7281C6EA3A300D2073B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A7271C6EA3A300D2073B /* main.swift */; };
+		45E5A7351C6EA42400D2073B /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A7301C6EA42400D2073B /* CommandLine.swift */; };
+		45E5A7361C6EA42400D2073B /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A7311C6EA42400D2073B /* Option.swift */; };
+		45E5A7371C6EA42400D2073B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A7321C6EA42400D2073B /* StringExtensions.swift */; };
+		45E5A7381C6EA42400D2073B /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A7341C6EA42400D2073B /* WebSocket.swift */; };
+		45E5A73A1C6EA4A600D2073B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E5A7391C6EA4A600D2073B /* libz.tbd */; };
+		45E5A73C1C6EB8F700D2073B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5A73B1C6EB8F700D2073B /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +31,13 @@
 /* Begin PBXFileReference section */
 		45E5A7241C6EA3A300D2073B /* SwiftSlackBot */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftSlackBot; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E5A7271C6EA3A300D2073B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		45E5A7301C6EA42400D2073B /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		45E5A7311C6EA42400D2073B /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		45E5A7321C6EA42400D2073B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		45E5A7341C6EA42400D2073B /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		45E5A7391C6EA4A600D2073B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		45E5A73B1C6EB8F700D2073B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		45E5A73D1C6ECE5300D2073B /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E5A73A1C6EA4A600D2073B /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +72,39 @@
 			isa = PBXGroup;
 			children = (
 				45E5A7271C6EA3A300D2073B /* main.swift */,
+				45E5A73B1C6EB8F700D2073B /* Event.swift */,
+				45E5A73D1C6ECE5300D2073B /* info.plist */,
+				45E5A72E1C6EA42400D2073B /* Frameworks */,
 			);
 			path = SwiftSlackBot;
+			sourceTree = "<group>";
+		};
+		45E5A72E1C6EA42400D2073B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45E5A72F1C6EA42400D2073B /* CommandLine */,
+				45E5A7331C6EA42400D2073B /* SwiftWebSocket */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		45E5A72F1C6EA42400D2073B /* CommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				45E5A7301C6EA42400D2073B /* CommandLine.swift */,
+				45E5A7311C6EA42400D2073B /* Option.swift */,
+				45E5A7321C6EA42400D2073B /* StringExtensions.swift */,
+			);
+			path = CommandLine;
+			sourceTree = "<group>";
+		};
+		45E5A7331C6EA42400D2073B /* SwiftWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				45E5A7391C6EA4A600D2073B /* libz.tbd */,
+				45E5A7341C6EA42400D2073B /* WebSocket.swift */,
+			);
+			path = SwiftWebSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E5A7371C6EA42400D2073B /* StringExtensions.swift in Sources */,
 				45E5A7281C6EA3A300D2073B /* main.swift in Sources */,
+				45E5A7361C6EA42400D2073B /* Option.swift in Sources */,
+				45E5A7351C6EA42400D2073B /* CommandLine.swift in Sources */,
+				45E5A73C1C6EB8F700D2073B /* Event.swift in Sources */,
+				45E5A7381C6EA42400D2073B /* WebSocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +259,7 @@
 		45E5A72C1C6EA3A300D2073B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +267,7 @@
 		45E5A72D1C6EA3A300D2073B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
