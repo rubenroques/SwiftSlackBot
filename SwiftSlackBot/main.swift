@@ -25,7 +25,6 @@ func convertStringToDictionary(text: String) -> [String:AnyObject]? {
 typealias Message = String
 typealias Handler = (Event, Message) -> (Void)
 
-
 class SlackBot {
 
     private var token : String = ""
@@ -38,13 +37,11 @@ class SlackBot {
 
     func start(forever: Bool = true) throws {
 
-
         let url = NSURL(string: slackAPIURL+rtmStartMethod+self.token)!
         print("Wiil request WS URL from address: \(url)")
 
-
         let request: NSURLRequest = NSURLRequest(URL: url)
-        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?> = nil
         let dataVal: NSData = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: response)
 
         let str = try NSJSONSerialization.JSONObjectWithData(dataVal, options: NSJSONReadingOptions.AllowFragments) as! [String:AnyObject]
@@ -120,9 +117,9 @@ class SlackBot {
 
         if forever {
             //Stolen from Taylor @ https://github.com/izqui/Taylor/
-            // So the program doesn't end
+            //So the program doesn't end
             while true {
-                // need to get rid of this somehow...
+                //need to get rid of this somehow...
                 NSRunLoop.mainRunLoop().run()
             }
         }
@@ -144,34 +141,22 @@ class SlackBot {
             self.handlerDictionary[event] = newHandler
         }
     }
-
-    func requestSocketAddress(withToken token:String = "") {
-
-
-    }
 }
-
-
-
-
-
-
-
 
 
 let server = SlackBot(token: "")
 
-server[Event.Hello] = { _,message in
+server[.Hello] = { _,message in
     print("\(message)")
 }
 
 
-server[Event.UserTyping] = { _,message in
+server[.UserTyping] = { _,message in
     print("\(message)")
 }
 
 
-server[Event.Message] = { _,message in
+server[.Message] = { _,message in
     print("\(message)")
 }
 
