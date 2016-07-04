@@ -1,0 +1,2 @@
+# SwiftSlackBot
+SwiftSlackBot experiments
